@@ -3,7 +3,7 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
-RUN apt-get update && apt-get install -y git python3 make g++ pkg-config libxi-dev libxext-dev libx11-dev && ln -sf python3 /usr/bin/python
+RUN apt-get update && apt-get install -y git
 
 WORKDIR /app
 
