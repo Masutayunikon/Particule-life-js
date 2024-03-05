@@ -3,28 +3,12 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
-RUN apt-get update && apt-get install -y git
-
-ARG APP_DATA_DIR
-ENV APP_DATA_DIR=${APP_DATA_DIR}
-
-# Now GIT_REPO is correctly defined from the ARG passed at build time
-# No need to redefine GIT_REPO here with ENV, unless you specifically need it as an environment variable later
-
-# Use ARG to declare GIT_REPO so it can be passed from docker-compose.yml
-ARG GIT_REPO
-
-# Log GIT_REPO env var
-RUN echo "Cloning from ${GIT_REPO}"
+RUN apt-get update && apt-get install -y git python3 make g++ pkg-config libxi-dev libxext-dev libx11-dev && ln -sf python3 /usr/bin/python
 
 WORKDIR /app
 
 # Use the ARG value here for git clone
-RUN git clone ${GIT_REPO} .
-
-# echo ls to see the contents of the cloned repo
-# copy ${APP_DATA_DIR}/app.env to /app/.env
-COPY ${APP_DATA_DIR}/app.env .env
+RUN git clone https://github.com/Masutayunikon/Particule-life-js.git .
 
 FROM base AS prod-deps
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
