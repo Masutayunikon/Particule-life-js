@@ -1,75 +1,124 @@
-# Nuxt 3 Minimal Starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt 3 Minimal Starter
+======================
 
-## Setup
+A minimal starter to get up and running with Nuxt 3. Explore the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) for more information.
 
-Make sure to install the dependencies:
+Prerequisites
+-------------
 
-```bash
-# npm
-npm install
+Before installing, make sure you have Node.js installed on your system. Find the appropriate installer for your system at [Node.js official website](https://nodejs.org/).
 
-# pnpm
-pnpm install
+Setup
+-----
 
-# yarn
-yarn install
+First, clone the project using Git (if you have not done so already), then install the dependencies:
 
-# bun
+bash
+
+Copy code
+
+```
+# npm 
+npm install  
+
+# pnpm 
+pnpm install  
+
+# yarn 
+yarn install  
+
+# bun 
 bun install
 ```
 
-## Development Server
+Using Docker
+------------
 
-Start the development server on `http://localhost:3000`:
+To build and run the project using Docker, make sure you have Docker installed on your system. Here's how you can build and run your Nuxt 3 application:
 
-```bash
-# npm
-npm run dev
+bash
 
-# pnpm
-pnpm run dev
+Copy code
 
-# yarn
-yarn dev
+```
+# Build your Docker image 
+docker build -t nuxt3-starter .  
 
-# bun
+# Run your Docker container 
+docker run -p 3000:3000 nuxt3-starter
+```
+
+This will serve your Nuxt 3 application on `http://localhost:3000`. The Docker commands assume that you have a Dockerfile in your project root and do not require cloning the GitHub repository.
+
+Development Server
+------------------
+
+To start the development server:
+
+bash
+
+Copy code
+
+```
+# npm 
+npm run dev  
+
+# pnpm 
+pnpm run dev  
+
+# yarn 
+yarn dev  
+
+# bun 
 bun run dev
 ```
 
-## Production
+Navigate to `http://localhost:3000` to view your application.
 
-Build the application for production:
+Production
+----------
 
-```bash
-# npm
-npm run build
+To build the application for production:
 
-# pnpm
-pnpm run build
+bash
 
-# yarn
-yarn build
+Copy code
 
-# bun
+```
+# npm 
+npm run build  
+
+# pnpm 
+pnpm run build  
+
+# yarn 
+yarn build  
+
+# bun 
 bun run build
 ```
 
-Locally preview production build:
+To locally preview the production build:
 
-```bash
-# npm
-npm run preview
+bash
 
-# pnpm
-pnpm run preview
+Copy code
 
-# yarn
-yarn preview
+```
+# npm 
+npm run preview  
 
-# bun
+# pnpm 
+pnpm run preview  
+
+# yarn 
+yarn preview  
+
+# bun 
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+For more information on deployment, please consult the [Nuxt 3 deployment documentation](https://nuxt.com/docs/getting-started/deployment).
+
+* * *
